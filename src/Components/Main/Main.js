@@ -8,25 +8,18 @@ const Main = () => {
   const [data, setData] = useState({ value: true, name: "" });
   const fetchHandler = async (n) => {
     const response = await fetch("https://freegeoip.app/json/");
-    console.log(response);
     const datafetch = await response.json();
     setData({ ...datafetch, value: false, name: n });
   };
-  console.log(data);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(e.target.name.value);
 
     fetchHandler(e.target.name.value);
   };
-  //26.394756,80.320754
   const distanceG = Distance(data.latitude, data.longitude, 26.4969, 80.3246);
-
   const distanceIet = Distance(data.latitude, data.longitude, 26.9143, 80.9419);
-  console.log(data.latitude, data.longitude);
-  console.log("distance= ", Math.round(distanceIet));
-  console.log("distance= ", Math.round(distanceG));
+
   return (
     <Fragment>
       <header className={classes.header}>
@@ -43,14 +36,20 @@ const Main = () => {
       <footer className={classes.footer}>
         <div className={classes["footer__body"]}>
           <p>A simple TrackMe WebApp by Gaurav Verma. </p>
-          <p>Location data has been fetched using Open GeoLocation API.</p>
           <p>
-            Don't worry! Your info will be erased as soon as the leave the site
+            Location data has been fetched using <u>Open GeoLocation API</u>.
+          </p>
+          <p>
+            <a href="https://github.com/lucky-web-dev/Project3_GeoAPI">
+              Code Link
+            </a>
+          </p>
+          <p>
+            Don't worry! Your info will be erased as soon as you leave the site
             or refresh it.{" "}
           </p>
           <p>
-            Got a project. Let's work together and use our skills and build
-            something innovative
+            Got a project. Let's work together and build something innovative
           </p>
           <ul>
             <li>
@@ -69,7 +68,6 @@ const Main = () => {
               </a>
             </li>
           </ul>
-          <p>Code Link</p>
         </div>
       </footer>
     </Fragment>
