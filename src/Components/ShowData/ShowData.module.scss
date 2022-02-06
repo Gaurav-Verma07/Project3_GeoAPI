@@ -1,0 +1,24 @@
+.data {
+  background-color: rgba(255, 255, 255, 0.3);
+  max-width: 70rem;
+  margin: 5rem auto;
+  font-size: 2.6rem;
+  font-weight: 300;
+  display: flex;
+  padding: 2rem 1rem;
+  color: #fff;
+  flex-direction: column;
+  border-radius: 10px;
+  &__p {
+    border-bottom: 1px solid #fff;
+  }
+  & p {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+}
+.coordinate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

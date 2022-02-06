@@ -1,0 +1,95 @@
+.header {
+  width: 100%;
+  height: 10vh;
+  background-color: #d4d4d4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.header p {
+  letter-spacing: 2px;
+  align-self: center;
+  font-weight: 700;
+  font-size: 4rem;
+
+  background-image: linear-gradient(to right, purple, green, blue, red, yellow);
+  background-clip: text;
+  color: transparent;
+}
+.input {
+  max-width: 50rem;
+  border-radius: 5px;
+  background-color: rgba(255, 0, 0, 0.6);
+  margin: 10rem auto;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+.input label {
+  color: #fff;
+  /* align-self: auto; */
+  font-size: 2rem;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+.input input {
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+}
+.input button {
+  background-color: #000;
+  color: #fff;
+  margin-top: 2rem;
+  border: 1px solid green;
+  padding: 1rem 0.6rem;
+  border-radius: 30px;
+  width: 30%;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.input button:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+.input input:active,
+.input input:focus {
+  border: 1px solid red;
+}
+
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.7rem;
+  width: 100%;
+  height: auto;
+  background-color: #000;
+  margin-top: 20rem;
+  color: #fff;
+}
+.footer__body {
+  width: 50%;
+  margin: 2rem auto;
+}
+.footer__body p {
+  margin: 2rem 0;
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+ul li {
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+ul li a {
+  color: #fff;
+  font-size: 3rem;
+}
+ul li a:hover {
+  color: blue;
+  transform: scale(1.4);
+}
