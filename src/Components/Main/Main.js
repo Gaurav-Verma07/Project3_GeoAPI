@@ -31,7 +31,7 @@ const Main = () => {
           <label htmlFor="name">Enter your name</label>
           <input type="text" name="name" id="name" required />
           <button>Log In</button>
-          {true && (
+          {wait && (
             <p className={classes["input__popup"]}>This may take a while...</p>
           )}
         </form>
