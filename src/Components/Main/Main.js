@@ -4,7 +4,7 @@ import classes from "./Main.module.css";
 import ShowData from "../ShowData/ShowData";
 import { Fragment, useState } from "react";
 const Main = () => {
-  //const [dataFetched, setDataFetched] = useState([]);
+  const [wait, setWait] = useState(false);
   const [data, setData] = useState({ value: true, name: "" });
   const fetchHandler = async (n) => {
     const response = await fetch("https://freegeoip.app/json/");
@@ -13,6 +13,7 @@ const Main = () => {
   };
 
   const submitHandler = (e) => {
+    setWait(true);
     e.preventDefault();
 
     fetchHandler(e.target.name.value);
@@ -30,6 +31,9 @@ const Main = () => {
           <label htmlFor="name">Enter your name</label>
           <input type="text" name="name" id="name" required />
           <button>Log In</button>
+          {true && (
+            <p className={classes["input__popup"]}>This may take a while...</p>
+          )}
         </form>
       )}
       {!data.value && <ShowData data={data} dg={distanceG} di={distanceIet} />}
