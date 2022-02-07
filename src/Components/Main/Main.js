@@ -71,7 +71,14 @@ const Main = () => {
         <div className={classes["footer__body"]}>
           <p>A simple TrackMe WebApp by Gaurav Verma. </p>
           <p>
-            Location data has been fetched using <u>Open GeoLocation API</u>.
+            Location data has been fetched using{" "}
+            <a
+              className={classes.open}
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API"
+            >
+              Open GeoLocation API
+            </a>
+            .
           </p>
           <p>
             <a href="https://github.com/lucky-web-dev/Project3_GeoAPI">

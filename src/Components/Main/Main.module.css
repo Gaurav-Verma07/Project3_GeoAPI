@@ -29,6 +29,12 @@
   align-items: center;
   padding-top: 5rem;
 }
+p a.open {
+  color: inherit;
+}
+p a {
+  color: blue;
+}
 .input label {
   color: #fff;
   /* align-self: auto; */
