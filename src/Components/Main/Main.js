@@ -5,20 +5,50 @@ import ShowData from "../ShowData/ShowData";
 import { Fragment, useState } from "react";
 const Main = () => {
   const [wait, setWait] = useState(false);
-  const [data, setData] = useState({ value: true, name: "" });
+  const [data, setData] = useState({
+    value: true,
+    name: "",
+  });
   const fetchHandler = async (n) => {
     const response = await fetch("https://freegeoip.app/json/");
     const datafetch = await response.json();
-    setData({ ...datafetch, value: false, name: n });
+
+    const successCallBack = (position) => {
+      //     console.log(position.coords.latitude);
+
+      setData((prevData) => {
+        return {
+          ...prevData,
+          country: datafetch.country_name,
+          state: datafetch.region_name,
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          name: n,
+          value: false,
+        };
+      });
+    };
+    navigator.geolocation.getCurrentPosition(successCallBack, errorCallBack);
   };
+  //My coprdinates{lat:26.394789, lon: 80.320511}
 
   const submitHandler = (e) => {
-    setWait(true);
     e.preventDefault();
-
+    setWait(true);
     fetchHandler(e.target.name.value);
   };
-  const distanceG = Distance(data.latitude, data.longitude, 26.4969, 80.3246);
+
+  const errorCallBack = (error) => {
+    alert(error);
+  };
+
+  const distanceG = Distance(
+    data.latitude,
+    data.longitude,
+    26.394789,
+    80.320511
+  );
+
   const distanceIet = Distance(data.latitude, data.longitude, 26.9143, 80.9419);
 
   return (

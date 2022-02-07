@@ -2,8 +2,7 @@ import classes from "./ShowData.module.scss";
 import Card from "../UI/Card";
 import { Fragment } from "react";
 const ShowData = (props) => {
-  const { city, country_name, ip, latitude, longitude, region_name, name } =
-    props.data;
+  const { state, country, latitude, longitude, name } = props.data;
   const distanceFromGaurav = Math.round(props.dg);
   const distanceFromIet = Math.round(props.di);
   return (
@@ -15,21 +14,13 @@ const ShowData = (props) => {
         <div className={classes.main}>
           <Card>
             <span>Country</span>
-            <span>{country_name}</span>
+            <span>{country}</span>
           </Card>
           <Card>
             <span>State</span>
-            <span>{region_name}</span>
-          </Card>
-          <Card>
-            <span>City</span>
-            <span>{city}</span>
+            <span>{state}</span>
           </Card>
 
-          <Card>
-            <span>Your IP address</span>
-            <span>{ip}</span>
-          </Card>
           <Card>
             <div className={classes.coordinate}>
               <span className={classes["coordinate__text"]}>Latitude</span>
