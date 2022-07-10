@@ -81,7 +81,7 @@ const Main = () => {
             .
           </p>
           <p>
-            <a href="https://github.com/lucky-web-dev/Project3_GeoAPI">
+            <a href="https://github.com/Gaurav-Verma07/Project3_GeoAPI">
               Code Link
             </a>
           </p>
@@ -94,7 +94,7 @@ const Main = () => {
           </p>
           <ul>
             <li>
-              <a href="https://github.com/lucky-web-dev">
+              <a href="https://github.com/Gaurav-Verma07">
                 <i className="fab fa-github"></i>
               </a>
             </li>
